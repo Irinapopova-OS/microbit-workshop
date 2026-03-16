@@ -65,7 +65,12 @@
 <h1>Micro:bit Workshop (1 Stunde)</h1>
 
 <p>Programmiere mit dem Micro:bit JavaScript Editor:</p>
-<p>https://makecode.microbit.org</p>
+
+<p>
+<a href="https://makecode.microbit.org" target="_blank">
+Micro:bit MakeCode Editor öffnen
+</a>
+</p>
 
 <div class="task">
 
