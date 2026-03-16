@@ -1,1 +1,205 @@
+<!DOCTYPE html>
 
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+
+        body{
+            font-family: Arial;
+            margin:40px;
+            background:#f4f6f8;
+        }
+
+        h1{
+            color:#1a4b8c;
+        }
+
+        .task{
+            background:white;
+            padding:20px;
+            margin:20px 0;
+            border-radius:10px;
+            box-shadow:0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        button{
+            padding:8px 15px;
+            background:#1a4b8c;
+            color:white;
+            border:none;
+            border-radius:6px;
+            cursor:pointer;
+            margin-top:10px;
+        }
+
+        .solution{
+            display:none;
+            background:#eee;
+            padding:10px;
+            margin-top:10px;
+            font-family:monospace;
+            white-space:pre;
+        }
+
+    </style>
+
+    <script>
+
+        function showSolution(id){
+            let element = document.getElementById(id);
+
+            if(element.style.display === "block"){
+                element.style.display = "none";
+            }else{
+                element.style.display = "block";
+            }
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+<h1>Micro:bit Workshop (1 Stunde)</h1>
+
+<p>Programmiere mit dem Micro:bit JavaScript Editor:</p>
+<p>https://makecode.microbit.org</p>
+
+<div class="task">
+
+    <h3>Aufgabe 1 – Name anzeigen</h3>
+
+    <p>Der Micro:bit soll beim Start deinen Namen anzeigen.</p>
+
+    <button onclick="showSolution('sol1')">Lösung anzeigen</button>
+
+    <div id="sol1" class="solution">
+
+        basic.showString("Irina")
+
+    </div>
+
+</div>
+
+<div class="task">
+
+    <h3>Aufgabe 2 – Buttons</h3>
+
+    <p>
+        Wenn Button A gedrückt wird → Smiley anzeigen
+        Wenn Button B gedrückt wird → Herz anzeigen
+    </p>
+
+    <button onclick="showSolution('sol2')">Lösung anzeigen</button>
+
+    <div id="sol2" class="solution">
+
+        input.onButtonPressed(Button.A, function () {
+        basic.showIcon(IconNames.Happy)
+        })
+
+        input.onButtonPressed(Button.B, function () {
+        basic.showIcon(IconNames.Heart)
+        })
+
+    </div>
+
+</div>
+
+<div class="task">
+
+    <h3>Aufgabe 3 – LED Animation</h3>
+
+    <p>Erstelle eine kleine Animation mit zwei Bildern.</p>
+
+    <button onclick="showSolution('sol3')">Lösung anzeigen</button>
+
+    <div id="sol3" class="solution">
+
+        basic.forever(function () {
+        basic.showLeds(`         . . # . .
+        . . # . .
+        . . # . .
+        . . # . .
+        . . # . .
+        `)
+
+        basic.pause(300)
+
+        basic.showLeds(`
+        . # . # .
+        . . # . .
+        # # # # #
+        . . # . .
+        . # . # .
+        `)
+
+        basic.pause(300)
+
+        })
+
+    </div>
+
+</div>
+
+<div class="task">
+
+    <h3>Aufgabe 4 – Würfel</h3>
+
+    <p>Wenn du den Micro:bit schüttelst, soll eine Zahl zwischen 1 und 6 erscheinen.</p>
+
+    <button onclick="showSolution('sol4')">Lösung anzeigen</button>
+
+    <div id="sol4" class="solution">
+
+        input.onGesture(Gesture.Shake, function () {
+
+        let number = randint(1,6)
+
+        basic.showNumber(number)
+
+        })
+
+    </div>
+
+</div>
+
+<div class="task">
+
+    <h3>Bonus – Reaktionsspiel</h3>
+
+    <p>
+        Der Micro:bit zeigt ein Herz.
+        Drücke schnell Button A um einen Punkt zu bekommen.
+    </p>
+
+    <button onclick="showSolution('sol5')">Lösung anzeigen</button>
+
+    <div id="sol5" class="solution">
+
+        let score = 0
+
+        input.onButtonPressed(Button.A, function () {
+
+        score = score + 1
+
+        basic.showNumber(score)
+
+        })
+
+        basic.forever(function () {
+
+        basic.showIcon(IconNames.Heart)
+
+        })
+
+    </div>
+
+</div>
+
+</body>
+</html>
