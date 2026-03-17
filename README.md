@@ -45,12 +45,18 @@ button{
 </style>
 
 <script>
-const PASSWORD = "sprint"; // 🔑 Passwort hier ändern
+const passwords = {
+    "sol1": "easy",
+    "sol2": "easy",
+    "sol3": "medium",
+    "sol4": "hard",
+    "sol5": "bonus"
+};
 
 function showSolution(id){
     let input = prompt("Passwort eingeben:");
 
-    if(input === PASSWORD){
+    if(input === passwords[id]){
         let element = document.getElementById(id);
 
         if(element.style.display === "block"){
