@@ -74,7 +74,7 @@ function showSolution(id){
 
 <body>
 
-<h1>Micro:bit Workshop (1 Stunde)</h1>
+<h1>Micro:bit Workshop </h1>
 
 <p>Programmiere mit dem Micro:bit JavaScript Editor:</p>
 
