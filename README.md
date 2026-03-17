@@ -45,7 +45,7 @@ button{
 </style>
 
 <script>
-const PASSWORD = "microbit"; // 🔑 Passwort hier ändern
+const PASSWORD = "sprint"; // 🔑 Passwort hier ändern
 
 function showSolution(id){
     let input = prompt("Passwort eingeben:");
