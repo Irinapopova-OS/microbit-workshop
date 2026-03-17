@@ -46,8 +46,8 @@ button{
 
 <script>
 const passwords = {
-    "sol1": "easy",
-    "sol2": "easy",
+    "sol1": "sprint",
+    "sol2": "sprint",
     "sol3": "medium",
     "sol4": "hard",
     "sol5": "bonus"
